@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles.css">
+        <script src="https://kit.fontawesome.com/d2fc3e6d80.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        
+        <div class="musicPlayer" id="musicPlayer">
+            <div class="music-info">
+                <h2 class="song-name" id="song-name">Now Playing: The Less I know The Better</h2>
+                <div class="song-progress" id="song-progress">
+                    <div class="progress-bar" id="song-length"></div>
+                </div>
+            </div>
+
+            <audio src="/Music/Tame Impala - The Less I know The Better.mp3" id="audio"></audio>
+            
+            <div class="cover-container">
+                <img src="/Cover/Tame Impala - The Less I know The Better.jpg" id="cover">
+            </div>
+
+            <div class="navigation">
+                <button id="prev" class="action-btn">
+                    <i class="fa-solid fa-backward"></i>
+                </button>
+                <button id="play" class="action-btn action-btn-big">
+                    <i class="fa-solid fa-play"></i>
+                </button>
+                <button id="next" class="action-btn">
+                    <i class="fa-solid fa-forward"></i>
+                </button>
+            </div>
+            
+        </div>
+        
+
+
+
+        
+        <script src="script.js" async defer></script>
+    </body>
+</html>

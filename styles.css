@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,300;0,400;1,100;1,200;1,400&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Work Sans', sans-serif;
+    background: linear-gradient(343deg, rgba(12,9,48,0), rgba(153,23,8,0.2));
+}
+
+h2 {
+    margin-bottom: 2rem;
+}
+
+.musicPlayer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.musicPlayer.play .cover-container img {
+    animation-play-state: running;
+}
+
+.cover-container {
+    width: 235px;
+    position: relative;
+}
+
+.cover-container img {
+    width: inherit;
+    border-radius: 50%;
+    animation: rotate 10s linear infinite;
+    animation-play-state: paused; 
+}
+
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.cover-container::after {
+    content: '';
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 49%;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    transform: translate(-50%, 50%);
+}
+
+.action-btn {
+    border: none;
+    font-size: 30px;
+    padding: 2rem;
+    cursor: pointer;
+    background: none;
+    outline: none;
+}
+
+.action-btn.action-btn-big {
+    font-size: 45px;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1;
+    padding: 1rem;
+}
+
+.music-info {
+    position: relative;
+    top: 80px;
+    transform: translateY(0%);
+    opacity: 0;
+    transition: transform 0.3s ease-in, opacity 0.3s ease-in;
+}
+
+.musicPlayer.play .music-info {
+    transform: translateY(-150%);
+    opacity: 1;
+}
+
+.song-progress {
+    display: flex;
+    margin: 0 auto;
+    background: #333;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 55%;
+    height: 4px;
+}
+
+#song-length {
+    background-color: white;
+    border-radius: 5px;
+    height: 100%;
+    width: 0%;
+    transition: width 0.1s linear;
+}
